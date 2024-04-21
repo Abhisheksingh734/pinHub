@@ -6,8 +6,8 @@ var logger = require("morgan");
 const expressSession = require("express-session");
 const serverless = require("serverless-http");
 
-var indexRouter = require("../routes/index");
-var usersRouter = require("../routes/users");
+var indexRouter = require("./routes/index");
+var usersRouter = require("./routes/users");
 const passport = require("passport");
 const passportLocal = require("passport-local");
 
@@ -55,4 +55,4 @@ app.use(function (err, req, res, next) {
   res.render("error");
 });
 
-module.exports = serverless(api);
+module.exports = serverless(app);
